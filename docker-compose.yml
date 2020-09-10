@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+    mongodb:
+        image: mongo
+        volumes: 
+            - './mongodb/db:/data/mongodb'
+    server:
+        build: .
+        volumes:
+            - './src:/usr/src/app/src'
+        ports: 
+            - "3001:3001"
